@@ -1,0 +1,8 @@
+label.trumbowyg-easyhtml-bigtext {
+  display: flex;
+  height: 100%;
+}
+
+label.trumbowyg-easyhtml-bigtext textarea {
+  width: 100%;
+}
