@@ -2,6 +2,21 @@
 
 Trumbowyg EasyHTML Plugin (TEP) is a plugin for trumbowyg that let you insert HTML code in an easy way.
 
+## Configuration
+
+For adding TEP button, you must add it in the configuration passed on trumbowyg init:
+```js
+var configuration = {
+    btns: [
+        // Add here the buttons you want to add to the panel
+        // ...
+        ['easyHTML'] // Add easyHTML buttons
+    ],
+};
+
+// Create a trumbowyg instance and pass previous created parameters
+$('textarea').trumbowyg(configuration);
+````
 
 ## Insertion modes
 

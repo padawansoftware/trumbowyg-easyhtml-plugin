@@ -13,12 +13,18 @@
         templates: {}
     };
 
+    // Encode the string in html characters for being inserted into the editor
     function HTMLEncode(string) {
         return string.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
         ;
+    }
+
+    // Shrink HTML string, removing spaces between tags
+    function HTMLShrink(string) {
+        return string.replace(/>\s*(.*?)\s*</g,'>$1<');
     }
 
     // Create an HTML element
@@ -44,7 +50,7 @@
         var element = createHTMLElement(values);
 
         trumbowyg.restoreRange();
-        trumbowyg.execCmd('insertHtml', element);
+        trumbowyg.execCmd('insertHtml', HTMLShrink(element));
     }
 
     // Create insert HTML modal
